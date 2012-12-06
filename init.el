@@ -59,6 +59,9 @@ ELPA (or MELPA).")
 (add-to-list 'load-path prelude-modules-dir)
 (add-to-list 'load-path prelude-vendor-dir)
 
+;; have to use this cedet for matlab-emacs (beginning of file required) (SANDY)
+(load-file (expand-file-name "cedet-1.1/common/cedet.el" prelude-personal-dir))
+
 ;; the core stuff
 (require 'prelude-packages)
 (require 'prelude-ui)
