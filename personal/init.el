@@ -37,14 +37,14 @@
     (setq tramp-persistency-file-name "~/.emacs.d/tramp-darwin")
   (setq tramp-persistency-file-name "~/.emacs.d/tramp-linux"))
 
-;;prelude stuff:
-;; remove guru mode and allow arrows:
-(defun disable-guru-mode ()
-  (guru-mode -1)
-  )
-(add-hook 'prelude-prog-mode-hook 'disable-guru-mode t)
-;; remove whitespace characters
-(add-hook 'prog-mode-hook 'whitespace-turn-off t)
+;; ;;prelude stuff:
+;; ;; remove guru mode and allow arrows:
+;; (defun disable-guru-mode ()
+;;   (guru-mode -1)
+;;   )
+;; (add-hook 'prelude-prog-mode-hook 'disable-guru-mode t)
+;; ;; remove whitespace characters
+;; (add-hook 'prog-mode-hook 'whitespace-turn-off t)
 
 ;;matlab loading stuff:
 (add-to-list 'load-path (expand-file-name "matlab-emacs" prelude-personal-dir))
