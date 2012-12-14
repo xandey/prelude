@@ -17,7 +17,7 @@
         ;; from the screen height (for panels, menubars and
         ;; whatnot), then divide by the height of a char to
         ;; get the height we want
-        (add-to-list 'default-frame-alist 
+        (add-to-list 'default-frame-alist
                      (cons 'height (/ (- (x-display-pixel-height) 100)
                                       (frame-char-height)))))))
 
@@ -35,6 +35,9 @@
     (add-to-list 'exec-path "/usr/local/bin"))
 (if (string-equal "darwin" (symbol-name system-type))
     (add-to-list 'exec-path (concat (getenv "HOME") "/.bin")))
+
+;; turn off delete selection mode
+(delete-selection-mode 0)
 
 ;; stop emacs from creating ~ files
 (setq make-backup-files nil)
@@ -58,15 +61,15 @@
     (setq tramp-persistency-file-name "~/.emacs.d/tramp-darwin")
   (setq tramp-persistency-file-name "~/.emacs.d/tramp-linux"))
 
-
-;; ;;prelude stuff:
-;; ;; remove guru mode and allow arrows:
-;; (defun disable-guru-mode ()
-;;   (guru-mode -1)
-;;   )
-;; (add-hook 'prelude-prog-mode-hook 'disable-guru-mode t)
-;; ;; remove whitespace characters
-;; (add-hook 'prog-mode-hook 'whitespace-turn-off t)
+;;prelude stuff:
+;; remove guru mode and allow arrows:
+(defun disable-guru-mode ()
+  (guru-mode -1)
+  )
+(add-hook 'prelude-prog-mode-hook 'disable-guru-mode t)
+;; remove whitespace characters
+;(whitespace-mode 0)
+(add-hook 'prog-mode-hook 'whitespace-turn-off t)
 
 ;;matlab loading stuff:
 (add-to-list 'load-path (expand-file-name "matlab-emacs" prelude-personal-dir))
