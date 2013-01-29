@@ -23,6 +23,9 @@
 
 (set-frame-size-according-to-resolution)
 
+;; visual line mode always on for text
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
 ;; indentation style, i like this better:
 (setq c-default-style "linux" c-basic-offset 2)
 
