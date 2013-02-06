@@ -112,3 +112,7 @@
 ;; matlab mlint for mac:
 (setq mlint-programs (quote ("mlint" "mac/mlint" "maci64/mlint" "/Applications/MATLAB_R2012a.app/bin/maci64/mlint")))
 ;;(setq mlint-programs (quote ("/Applications/MATLAB_R2012a.app/bin/maci64/mlint" "mac/mlint")))
+
+
+;; matlab-shell turn off electric-paren
+(add-hook 'matlab-shell-mode-hook (lambda () (electric-pair-mode -1)))
