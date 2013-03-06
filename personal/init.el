@@ -36,8 +36,6 @@
 ;; on osx, usr/local/bin is not searched by default for some reason
 (if (string-equal "darwin" (symbol-name system-type))
     (add-to-list 'exec-path "/usr/local/bin"))
-(if (string-equal "darwin" (symbol-name system-type))
-    (add-to-list 'exec-path (concat (getenv "HOME") "/.bin")))
 
 ;; turn off delete selection mode
 (delete-selection-mode 0)
@@ -90,7 +88,7 @@
     (setenv "DYLD_LIBRARY_PATH" "/Applications/MATLAB_R2012a.app/bin/maci64" ))
 ;; add matlab bin directory to pathbin to environemtn path
 (if (string-equal "darwin" (symbol-name system-type))
-    (setenv "PATH" (concat (getenv "PATH") ":/Applications/MATLAB_R2012a.app/bin:/Applications/MATLAB_R2012a.app/bin/maci64:~/.bin")))
+    (setenv "PATH" (concat "/Applications/Emacs.app/Contents/MacOS/bin:" (getenv "PATH") ":/Applications/MATLAB_R2012a.app/bin:/Applications/MATLAB_R2012a.app/bin/maci64:~/.bin")))
 
 (setq matlab-show-mlint-warnings t)
 (setq matlab-highlight-cross-function-variables t)
