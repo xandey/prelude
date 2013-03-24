@@ -62,6 +62,15 @@
     (setq tramp-persistency-file-name "~/.emacs.d/tramp-darwin")
   (setq tramp-persistency-file-name "~/.emacs.d/tramp-linux"))
 
+;; buffer move stuff:
+(add-to-list 'load-path (expand-file-name prelude-personal-dir))
+(require 'buffer-move)
+(global-set-key (kbd "<C-s-up>")     'buf-move-up)
+(global-set-key (kbd "<C-s-down>")   'buf-move-down)
+(global-set-key (kbd "<C-s-left>")   'buf-move-left)
+(global-set-key (kbd "<C-s-right>")  'buf-move-right)
+
+
 ;;prelude stuff:
 ;; remove guru mode and allow arrows:
 (defun disable-guru-mode ()
