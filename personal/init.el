@@ -23,8 +23,18 @@
 
 (set-frame-size-according-to-resolution)
 
+;; If you have a duplex-capable printer (one that prints both sides of
+;; the paper), set ps-spool-duplex to t.  Ps-print will insert blank
+;; pages to make sure each buffer starts on the correct side of the
+;; paper.
+(setq ps-spool-duplex t)
+
 ;; visual line mode always on for text
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+;; tell auctex to use make
+(define-key tex-mode-map  (kbd "C-c C-c")    'compile)
+
 
 ;; indentation style, i like this better:
 (setq c-default-style "linux" c-basic-offset 2)
