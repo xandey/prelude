@@ -33,7 +33,18 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
 ;; tell auctex to use make
-(define-key tex-mode-map  (kbd "C-c C-c")    'compile)
+;(eval-after-load 'latex 
+;                 (define-key tex-mode-map  (kbd "C-c C-c")    'compile))
+;; (add-hook 'LaTeX-mode-hook
+;;   (lambda ()
+;;     (define-key LaTeX-mode-map (kbd "C-c C-c")    'compile)
+;;   )
+;; )
+;(eval-after-load 'latex 
+;                 (define-key LaTeX-mode-map (kbd "C-c C-c")    'compile))
+(define-key (current-global-map) [remap tex-compile] 'compile)
+
+(add-hook `latex-mode-hook `flyspell-mode)
 
 
 ;; indentation style, i like this better:
